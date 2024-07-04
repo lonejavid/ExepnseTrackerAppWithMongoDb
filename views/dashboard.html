@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: hsl(210, 24%, 92%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start; /* Align form to the left */
+            height: 100vh;
+            padding-left: 20px; /* Add some margin on the left side */
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px; /* Increased padding for better spacing */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+           
+        }
+        .user-expense{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #fff;
+
+        }
+      
+        .expenses-table{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 10px;
+            margin-left: 40px;
+            background-color: #fff;
+        }
+        .leadersDiv{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 10px;
+            margin-left: 70px;
+            background-color: #fff;
+            width: fit-content;
+        }
+        th{
+            border-radius: 0px;
+            background-color: hsl(167, 75%, 48%);
+            border: 1px solid #333;
+            padding: 4px;
+            text-align: left;
+        }
+        .checkbox-options{
+            display: flex;
+            gap: 10px;
+        }
+        .expenses-form{
+            display: flex;
+            margin-top: 0%;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    
+    <div class="form-container">
+        <button type="input" id="rzp-primum">Go Primium</button>
+        <div id="msg">
+            <p id="msg1"></p>
+            <button id="downloadexpense"  style="margin-bottom: 5px;">Download File</button>
+        </div>
+        <div id="leaderBtn">
+           
+        </div>
+       
+        <form class="expenses-form" id="expenses-form">
+            <h1>Add Expenses</h1>
+            <div class="checkbox-options">
+                <label>
+                    <input type="checkbox" name="income" value="1" id="income"> Income 
+                </label>
+                <label>
+                    <input type="checkbox" name="Expense" value="2" id="expense"> Expense
+                </label>
+            </div>
+            <label for="amount">Amount</label>
+                     <input type="number" class="amount-input" id="amount">
+            <label for="description">Description</label>
+                     <input type="text" class="description-input" id="description">
+            <label for="category">Category</label>
+            <select id="category">
+                <option>Fuel</option>
+                <option>Education</option>
+                <option>Entertainment</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="expenses-table">
+        <h2 style="text-align: center; margin-top: 50px;">Day To Day Expenses</h2>
+        <table  class="user-expenses" id="tb">
+            <tr>
+                
+                <th>Description</th>
+                <th>Category</th>
+                <th>Income</th>
+                <th>Expense</th>
+            </tr>
+        </table>
+        <div id="pagination-container">
+         
+        </div>
+        <select id="rows-per-page-select" style="margin-top: 5px;">
+            <option value="1" selected>1 Rows Per Page</option>
+            <option value="3">3 Rows Per Page</option>
+            <option value="5">5 Rows Per Page</option>
+            <!-- Add more options as needed -->
+        </select>
+        
+    <button id="list-of-downloaded-files">List of downloaded files</button>
+      <ul id="downloadedFiles">
+        </ul>
+     </div>
+   
+     <div id="leader" class="expenses-table">
+    </div>
+    <div id="leadersBoard" class="leadersDiv">
+        <h3>Leaders Board</h3>
+        <button  id="downloadexpense">Download File</button>
+        <ul id="list"></ul>
+    </div>
+    
+        
+    
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/downloadFilesFrontEnd.js"></script>
+</body>
+</html>

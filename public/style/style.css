@@ -1,0 +1,84 @@
+.login-btn {
+    margin-top: 0.5cm;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #29bc9c;
+    color: #fff;
+    border-radius: 10px;
+}
+#label{
+    font-size: medium;
+    margin-left: 0cm;
+}
+
+
+
+
+
+
+
+body {
+    /* Set background image and cover the entire viewport */
+    background: url('/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Optionally, set additional styles */
+    font-family:  sans-serif;
+    color: #333;
+}
+.sign-up-form{
+    border-radius: 40px;
+    width: 300px;
+    height: 12cm;
+    box-shadow: 0px 0px 5px 0px;
+    background: #fff;
+    padding: 50px;
+    margin: 0% auto 0;
+    text-align: center;
+}
+.sign-up-form h1
+{
+    margin-top: 0;
+    color: hsl(158, 61%, 37%);
+    margin-bottom: 30px;
+}
+.input-box
+{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #999;
+    outline: none;
+}
+button
+{
+    color: #fff;
+    padding: 10%;
+    width: 50%;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 10px 0;
+    border:  none;
+    outline: none;
+    cursor: pointer;
+
+}
+.signup-btn
+{
+    margin-top: 0%;
+    background-color: #29bc9c;
+}
+.login-btn
+{
+    margin-top: 0;
+    background-color: hwb(191 7% 46%);
+}
+.leadersDiv{
+    height: auto;
+    color: #333;
+    border-radius: 3cm;
+    border-color:#29bc9c;
+    background-color: #fff;
+}
